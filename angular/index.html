@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="HelloWorldApp">
+  <head>
+    <meta charset="utf-8">
+    <title> Hello World</title>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://drrjhlchpvi7e.cloudfront.net/libs/stamplay-js-sdk/2.1.4/stamplay.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+  <body ng-controller="HelloWorldCtrl">
+    <!-- <input type="text" ng-model="myMessage"> -->
+    <!-- <h1>{{myMessage}}</h1> -->
+
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Blogger</a>
+      </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active"><a href="#">Home <span class="sr-only"></span></a></li>
+        <li ui-sref-active="active"><a href="#">Login</a></li>
+        <li ui-sref-active="active"><a href="#">Sign up</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blogs <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="">Write a Blog</a></li>
+            <li><a href="">View my Blog</a></li>
+            <li><a href="">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- jumbotron part -->
+
+  <div class="jumbotron">
+    <center>
+      <h1>Blogger</h1>
+      <p>The Worlds Best Blogs For Programming</p>
+      <p><a class="btn btn-primary btn-lg" role="button">Learn More</a></p>
+    </center>
+  </div>
+
+  <!-- ng-repeat directive for angular js -->
+  <!-- ng repeat can be used as loop to print a value from an array(initialised in same or js) -->
+  <div>
+    <ul>
+      <!-- <li ng-repeat="item in [1,2,3,4,5]">{{item}}</li> -->
+      <li ng-repeat ="item in players |orderBy: item: false">{{item}}</li>
+    </ul>
+  </div>
+
+  <!-- ng-if basic working  -->
+  <div>
+    <div ng-if="true"><h1>DIV1</h1></div>
+    <div ng-if="false"><h1>DIV2</h1></div>
+  </div>
+
+  <!-- ng-if intermediate working -->
+  <div>
+    <ul>
+      <li ng-repeat="num in numbers" ng-if="num % 2==0">
+        <div>{{num}}</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ng-hide and ng-show -->
+  <!-- the main difference between ng-show/ng-hide and ng-if is that ng-if doesnt render the content if the value is false whereas ng-show/hide reners value every time -->
+  <div ng-show="true">
+    <h1>DIV1</h1>
+  </div>
+  <div ng-hide="false" class="ng-hide">
+    <h1>DIV2</h1>
+  </div>
+
+  <!-- ng-include : it helps us to create modulated html pages. Other html pages can also be included; -->
+  <div ng-include="'template.html'">
+  </div>
+
+  </body>
+</html>
