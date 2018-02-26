@@ -21,7 +21,7 @@
     <!--Navigation Header-->
     <nav>
       <div class="nav-wrapper light-blue darken-4">
-        <a href="home.php" class="brand-logo logo">Logo</a>
+        <a href="home.php" class="brand-logo logo">GEU Bid</a>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="logout.php"><i class="material-icons left">home</i> Logout</a></li>
@@ -38,9 +38,9 @@
     <div class="ab row center" style="padding: 50px;">
       <div class=" container col s6 col offset-s3 grey card-panel" style="padding: 100px;">
         <h5>You Have Been Successfully Logged out</h5>
-        <button class="btn waves-effect red" type="submit">
-          <a href="login.php">Login</a>
-        </button>
+          <a href="login.php">
+            <button class="btn waves-effect red" style="margin-top: 10px;">Login</button>
+          </a>
       </div>
     </div>
     <div class="fixed-action-btn">
